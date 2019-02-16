@@ -17,6 +17,7 @@
 #include "Subsystems/Piston.h"
 #include "Subsystems/HatchServo.h"
 #include "Subsystems/PressureControl.h"
+#include "AHRS.h"
 
 class Robot : public frc::TimedRobot {
  public:
@@ -25,7 +26,7 @@ class Robot : public frc::TimedRobot {
   static Piston* m_piston;
   static HatchServo* m_hatchServo;
   static PressureControl* m_compressor;
-
+  static AHRS* ahrs;
   static cs::UsbCamera camera1;
 
   void RobotInit() override;

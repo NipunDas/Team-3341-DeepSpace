@@ -13,6 +13,7 @@ DriveTrain* Robot::m_drive;
 Piston* Robot::m_piston;
 HatchServo* Robot::m_hatchServo;
 PressureControl* Robot::m_compressor;
+AHRS* Robot::ahrs;
 OI* Robot::m_oi;
 
 void Robot::RobotInit() {
@@ -23,6 +24,7 @@ void Robot::RobotInit() {
   m_piston = new Piston();
   m_hatchServo = new HatchServo();
   m_compressor = new PressureControl();
+  ahrs = new AHRS(frc::SPI::Port::kMXP);
   m_oi = new OI();
 
   cs::UsbCamera camera1 = CameraServer::GetInstance()->StartAutomaticCapture();
